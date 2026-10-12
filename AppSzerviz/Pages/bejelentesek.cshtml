@@ -1,0 +1,32 @@
+﻿@page
+@model AppSzerviz.Pages.bejelentesekModel
+@if (Model.cont.Bejelentesek.Count() > 0)
+{
+    <table border="1">
+        <tr>
+            <th>bejelentő neve</th>
+            <th>e-mail-cím</th>
+            <th>eszköz típusa</th>
+            <th>leírása</th>
+            <th>sürgősség</th>
+            <th>bejelentés időpontja</th>
+        </tr>
+    @foreach (var i in Model.cont.Bejelentesek.OrderByDescending(x => x.BejelentesDatuma))
+    {
+        <tr>
+            <td>@i.BejelentoNeve</td>
+            <td>@i.Email</td>
+            <td>@i.EszkozTipus</td>
+            <td>@i.HibaLeiras</td>
+            <td>@i.Surgos</td>
+            <td>@i.BejelentesDatuma</td>
+        </tr>
+    }
+    </table>
+}
+else
+{
+    <p>
+        Nincs megjeleníthető bejelentés.
+    </p>
+}

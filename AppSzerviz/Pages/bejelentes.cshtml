@@ -1,0 +1,28 @@
+﻿@page
+@model AppSzerviz.Pages.bejelentesModel
+<form method="post">
+    @Html.AntiForgeryToken()
+    <label for="BejelentoNeve">Neved:</label>
+    <input type="text" id="BejelentoNeve" name="BejelentoNeve"/>
+    <br/>
+    <label for="Email">Emailed:</label>
+    <input type="text" id="Email" name="Email"/>
+    <br/>
+    <label for="EszkozTipus"/>
+    <select name="EszkozTipus">
+        <option value="">-- Válassz! --</option>
+        <option value="Asztali számítógép">Asztali számítógép</option>
+        <option value="Monitor">Monitor</option>
+        <option value="Nyomtató">Nyomtató</option>
+        <option value="Egyéb">Egyéb</option>
+    </select>
+    <br/>
+    <label for="HibaLeiras">Hiba leírása</label>
+    <input type="text" id="HibaLeiras" name="HibaLeiras" />
+    <br/>
+    <label for="Surgos">Sürgős</label>
+    <input type="checkbox" id="Surgos" value="True" name="Surgos" />
+    <br/>
+    <input type="submit"/>
+    <br/>
+</form>
